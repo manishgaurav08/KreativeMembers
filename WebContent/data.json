@@ -1,0 +1,27 @@
+	{ "cardNo": "KT0516123456789", "hotelName": "Radisson Grand", "memberName": "Manish Gaurav", "memberAddress": "Rajendra Palace, Delhi",
+	  "benefits": [{"id": 1, "title": "Food Discount at Restaurent & Bar", "description": "Food Discount at Restaurent & Bar", 
+				  "options": [{"id": 1, "title": "Dining Alone", "discount": 50, "description": "50 %"},
+				  			{"id": 2, "title": "2 People Dining", "discount": 15, "description": "15 %"}]
+		          },
+		          {"id": 2, "title": "Event2", "description": "Event 1 description", 
+				  "options": [{"id": 1, "title": "option1", "discount": 10, "description": "description 1"},
+				  			{"id": 2, "title": "option1", "discount": 20, "description": "description 2"}]
+		          },
+		          {"id": 3, "title": "Event3", "description": "Event 1 description", 
+				  "options": [{"id": 1, "title": "option1", "discount": 15, "description": "description 1"},
+				  			{"id": 2, "title": "option1", "discount": 20, "description": "description 2"}]
+		          },
+		          {"id": 4, "title": "Event4", "description": "Event 1 description", 
+				  "options": [{"id": 1, "title": "option1", "discount": 20, "description": "description 1"},
+				  			{"id": 2, "title": "option1", "discount": 25, "description": "description 2"}]
+		          },
+		          {"id": 5, "title": "Event5", "description": "Event 1 description", 
+				  "options": [{"id": 1, "title": "option1", "discount": 30, "description": "description 1"},
+				  			{"id": 2, "title": "option1", "discount": 10, "description": "description 2"}]
+		          }, 
+		          {"id": 6, "title": "Event6", "description": "Event 1 description", 
+				  "options": [{"id": 1, "title": "option1", "discount": 40, "description": "description 1"},
+				  			{"id": 2, "title": "option1", "discount": 10, "description": "description 2"}]
+		          }
+		        ]
+    }

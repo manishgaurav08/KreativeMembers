@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Cardswipe Events Demonstration</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.cardswipe.js"></script>
+	<link rel="stylesheet" type="text/css" href="demo-events.css" />
+	<link rel="stylesheet" type="text/css" href="app.css" />
+	
+</head>
+<body>
+
+	<div id="pagecontent">
+		<p id = "header1">Kreative Hospitality</p>
+		<p id="go_button">
+			Plug in your card reader and scan a card.
+			<input type="button"  value="Go"  onclick="refresh()"/>
+		</p>
+		
+		<div id = "card_details" style = "display: none;">
+			<p id = "header2">Hotel: <label name="hotel_name" id="hotel_name" /></p>
+			
+			<table style="min-width:800px">
+				<tr class='even'>
+					<td>Card No.: <label name="card_no" id="card_no" align="right"/></td>
+					<td >Card Holder's Name: <label name="member_name" id="member_name" /></td>
+					<td>Card Holder's Address: <label name="member_address" id="member_address" /></td>			    
+				</tr>
+			</table>
+		</div>
+		<div >
+			<form>
+				<table id = "benefits_container" > <!-- cellspacing='0' is important, must stay -->
+					
+				</table>
+				
+				<input type="submit" align="center" id="submit_button"/>
+			</form>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<form>
+		
+			<table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+				<tr><th>Benefits</th><th>Discount Option</th><th>Net Amount (INR)</th><th>Gross Amount (INR)</th></tr><!-- Table Header -->
+			    
+				<tr>
+					<td>Food Discount at Restaurent & Bar</td>
+					<td><select name="foodDiscount" id="foodDiscount">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Dining Alone [50%]</option>
+							<option value="2">2 People Dining [33%]</option>
+							<option value="3">3 People Dining [25%]</option>
+							<option value="4">4 People Dining [20%]</option>
+							<option value="5">5 to 20 People Dining [20%]</option>
+							<option value="6">In Room Dining [20%]</option>
+							<option value="7">Food Promotions and Events [15%]</option>
+							</select>
+					</td>
+					<td><input type="text" name="foodDiscountNetAmt" id="foodDiscountNetAmt" /></td>
+					<td><label name="foodDiscountGrossAmt" id="foodDiscountGrossAmt" /></td>
+				</tr><!-- Table Row -->
+				
+				<tr class='even'>
+					<td>TBeverage Discount at Restaurent & Bar (1 to 20 people)</td>
+					<td>
+						<select name="bvgDiscount" id="bvgDiscount">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Alcoholic & non alcoholic (IMFL & Beer) [20%]</option>
+							<option value="2">Alcoholic (Foreign Liquor) [15%]</option>
+							<option value="3">Happy hours- GEOFFERY'S (IMFL & Beer) [1-1]</option>
+							<option value="4">Happy hours- GEOFFERY'S (Foreign Liquor) [2-2]</option>
+						</select>
+					</td>
+					<td><input type="text" name="bvgDiscountNetAmt" id="bvgDiscountNetAmt" /></td>
+					<td><label name="bvgDiscountGrossAmt" id="bvgDiscountGrossAmt" /></td>
+				</tr><!-- Darker Table Row -->
+				
+				<tr>
+					<td>Accomodation: </td>
+					<td>
+						<select name="accomodation" id="accomodation">
+							<option value="0">(Select accomodation type)</option>
+							<option value="1">On best available/flexible rate [10%]</option>
+						</select>
+					</td>
+					<td><input type="text" name="accmDiscountNetAmt" id="accmDiscountNetAmt" /></td>
+					<td><label name="accmDiscountGrossAmt" id="accmDiscountGrossAmt" /></td>
+				</tr>
+				
+				<tr class='even'>
+					<td>Pastry</td>
+					<td>
+						<select name="pastry" id="pastry">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Default [30%]</option>
+						</select>
+					</td>
+					<td><input type="text" name="pastryDiscountNetAmt" id="pastryDiscountNetAmt" /></td>
+					<td><label name="pastryDiscountGrossAmt" id="pastryDiscountGrossAmt" /></td>
+				</tr><!-- Darker Table Row -->
+				
+				<tr>
+					<td>Spa & Beauty saloon: </td>
+					<td>
+						<select name="spaSaloon" id="spaSaloon">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Default [20%]</option>
+						</select>
+					</td>
+					<td><input type="text" name="spaSaloonDiscountNetAmt" id="spaSaloonDiscountNetAmt" /></td>
+					<td><label name="spaSaloonDiscountGrossAmt" id="spaSaloonDiscountGrossAmt" /></td>
+				</tr>
+				
+				<tr class='even'>
+					<td>Benquets & Conferences:</td>
+					<td>
+						<select name="benqConf" id="benqConf">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Default [20%]</option>
+						</select>
+					</td>
+					<td><input type="text" name="benqConfDiscountNetAmt" id="benqConfDiscountNetAmt" /></td>
+					<td><label name="benqConfDiscountGrossAmt" id="benqConfDiscountGrossAmt" /></td>
+				</tr><!-- Darker Table Row -->
+				
+				<tr>
+					<td>Diwali / Christmas / New year hampers: </td>
+					<td>
+						<select name="festival" id="festival">
+							<option value="0">(Select discount option)</option>
+							<option value="1">Default [20%]</option>
+						</select>
+					</td>
+					<td><input type="text" name="festivalDiscountNetAmt" id="festivalDiscountNetAmt" /></td>
+					<td><label name="festivalDiscountGrossAmt" id="festivalDiscountGrossAmt" /></td>
+				</tr>
+				
+			    <tr class='even'>
+			    	<td></td>
+			    	<td>Total</td>
+			    	<td></td>
+			    	<td></td>
+			    </tr>
+			</table>
+			
+			<input type="submit" align="center"/>
+		</form>
+
+	</div>
+	
+
+	<!-- A modal-style message that appears while scanning -->
+	<div id="overlay">
+		<div id="scanning" class="dialog">
+			<p>Scanning...</p>
+		</div>
+	</div>
+
+	<div id="failure" class="dialog">
+		<p>Unrecognized card.</p>
+	</div>
+
+	<div id="success" class="dialog">
+		<p>Successful scan!</p>
+
+		<div id="properties">
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		// Called by plugin on a successful scan.
+		var complete = function (data) {
+
+			// Is it a payment card?
+			if (data.type == "generic")
+				return;
+
+			// Copy data fields to form
+			$("#firstName").val(data.firstName);
+			$("#lastName").val(data.lastName);
+			$("#account").val(data.account);
+			$("#expMonth").val(data.expMonth);
+			$("#expYear").val(data.expYear);
+			$("#type").val(data.type);
+
+		};
+
+		// Event handler for scanstart.cardswipe.
+		var scanstart = function () {
+			$("#overlay").fadeIn(200);
+		};
+
+		// Event handler for scanend.cardswipe.
+		var scanend = function () {
+			$("#overlay").fadeOut(200);
+		};
+
+		// Event handler for success.cardswipe.  Displays returned data in a dialog
+		var success = function (event, data) {
+
+			$("#properties").empty();
+
+			// Iterate properties of parsed data
+			for (var key in data) {
+				if (data.hasOwnProperty(key)) {
+					var text = key + ': ' + data[key];
+					$("#properties").append('<div class="property">' + text + '</div>');
+				}
+			}
+
+
+			$("#success").fadeIn().delay(3000).fadeOut();
+		}
+
+		var failure = function () {
+			$("#failure").fadeIn().delay(1000).fadeOut();
+		}
+
+		// Initialize the plugin with default parser and callbacks.
+		//
+		// Set debug to true to watch the characters get captured and the state machine transitions
+		// in the javascript console. This requires a browser that supports the console.log function.
+		//
+		// Set firstLineOnly to true to invoke the parser after scanning the first line. This will speed up the
+		// time from the start of the scan to invoking your success callback.
+		$.cardswipe({
+			firstLineOnly: true,
+			success: complete,
+			parsers: ["visa", "amex", "mastercard", "generic"],
+			debug: false
+		});
+
+		// Bind event listeners to the document
+		$(document)
+			.on("scanstart.cardswipe", scanstart)
+			.on("scanend.cardswipe", scanend)
+			.on("success.cardswipe", success)
+			.on("failure.cardswipe", failure)
+		;
+	</script>
+	<script type="text/javascript" src="dataHandler.js"></script>
+	
+</body>
+</html>
